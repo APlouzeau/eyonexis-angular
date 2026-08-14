@@ -1,1 +1,5 @@
-<p class="">sidebar works!</p>
+<ul>
+  @for (item of sidebarItems; track item.id) {
+  <li><a [routerLink]="item.link">{{item.name}}</a></li>
+  }
+</ul>

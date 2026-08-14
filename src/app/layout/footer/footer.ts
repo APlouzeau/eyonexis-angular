@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { signal } from '@angular/core';
 @Component({
-  selector: 'footer',
+  selector: 'app-footer',
   imports: [],
   templateUrl: './footer.html',
   styleUrls: ['./footer.css'],

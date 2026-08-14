@@ -1,12 +1,12 @@
 <div class="flex flex-col justify-between min-h-screen">
   <div class="flex">
-    <sidebar class="min-h-screen border-x border-solid border-black p-4"></sidebar>
+    <app-sidebar class="min-h-screen border-x border-solid border-black p-4"></app-sidebar>
     <div class="flex flex-col w-full">
-      <header></header>
+      <app-header></app-header>
       <main>
         <router-outlet></router-outlet>
       </main>
     </div>
   </div>
-  <footer></footer>
+  <app-footer></app-footer>
 </div>

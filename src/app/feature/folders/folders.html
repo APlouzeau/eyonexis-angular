@@ -1,0 +1,23 @@
+<li>
+  <span class="flex items-center gap-2 w-full py-2 cursor-pointer hover:bg-gray-200 text-gray-600"
+    [style.padding-left.px]="8 + depth * 8" (click)="toggle()">
+    <img src="icons/folder-icon.jpg" class="w-4 h-4" alt="" />
+    {{ folder.folderName }}
+  </span>
+
+  @if (expanded()) {
+  <ul>
+    @for (child of folder.children; track child.idFolder) {
+    <li><app-folders [folder]="child" [depth]="depth + 1"></app-folders></li>
+    }
+    @for (note of folder.notes; track note.id) {
+    <li>
+      <a [routerLink]="['/notes', note.id]" class="block w-full py-2 hover:bg-gray-200 text-gray-600"
+        [style.padding-left.px]="8 + (depth + 1) * 8">
+        {{ note.title }}
+      </a>
+    </li>
+    }
+  </ul>
+  }
+</li>

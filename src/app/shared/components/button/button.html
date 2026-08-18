@@ -1,1 +1,3 @@
-<button matButton="filled" [color]="color">{{ label() }}</button>
+<button [class]="classes()" (click)="clicked.emit()">
+  {{ label() }}
+</button>

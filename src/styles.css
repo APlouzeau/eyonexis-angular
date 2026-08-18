@@ -3,9 +3,10 @@
 @import 'tailwindcss/preflight.css' layer(base);
 @import 'tailwindcss/utilities.css' layer(utilities);
 
+@theme {
+  --font-sans: 'Inter', sans-serif;
+}
+
 @layer base {
   /* Neutralise juste ce que Preflight casse sur Material */
-  button:not(.mat-mdc-button-base) {
-    background-color: revert;
-  }
 }

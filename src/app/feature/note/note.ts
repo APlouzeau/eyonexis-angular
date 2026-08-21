@@ -13,8 +13,11 @@ export class Note implements OnChanges {
   note: NoteContent | undefined;
 
   constructor(private noteService: NoteService) {}
-
   ngOnChanges() {
-    this.note = this.noteService.getNotesById(this.id);
+    if (this.id) {
+      this.noteService.getNotesById(this.id).subscribe((note) => {
+        this.note = note;
+      });
+    }
   }
 }

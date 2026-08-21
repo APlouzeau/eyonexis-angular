@@ -1,32 +1,23 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 import { NoteContent } from '../interface/note';
+import { environment } from '../../../../environments/environment.development';
 
 @Injectable({
   providedIn: 'root',
 })
 export class NoteService {
-  private notes: NoteContent[] = [
-    {
-      id: '1',
-      title: 'Sample Note',
-      content: 'This is a sample note.',
-      folderId: null,
-    },
-    {
-      id: '2',
-      title: 'Another Note',
-      content: 'This is another note.',
-      folderId: null,
-    },
-    {
-      id: '3',
-      title: 'Third Note',
-      content: 'This is the third note.',
-      folderId: null,
-    },
-  ];
+  private http = inject(HttpClient);
+  private apiUrl = `${environment.apiUrl}/folder-tree`; // à remplacer
 
-  getNotesById(id: string): NoteContent | undefined {
-    return this.notes.find((note) => note.id === id);
+  getNotes(): Observable<NoteContent[]> {
+    let result = this.http.get<NoteContent[]>(this.apiUrl);
+    console.log(result);
+    return result;
+  }
+
+  getNotesById(id: string): Observable<NoteContent> {
+    return this.http.get<NoteContent>(`${this.apiUrl}/${id}`);
   }
 }

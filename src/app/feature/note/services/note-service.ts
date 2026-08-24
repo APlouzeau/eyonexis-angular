@@ -18,7 +18,7 @@ export class NoteService {
   }
 
   getNotesById(id: string): Observable<NoteSummary[]> {
-    let result = this.http.get<NoteContent[]>(`${this.apiUrl}/notes/${id}`);
+    let result = this.http.get<NoteSummary[]>(`${this.apiUrl}/notes/${id}`);
     return result;
   }
 }

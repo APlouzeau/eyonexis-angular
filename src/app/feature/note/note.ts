@@ -16,7 +16,7 @@ export class Note implements OnChanges {
   constructor(private noteService: NoteService) {}
   ngOnChanges() {
     if (this.id) {
-      this.noteService.getNotesById(this.id).subscribe((noteSummary) => {
+      this.noteService.getNotesByFolderId(this.id).subscribe((noteSummary) => {
         this.notesSummary = noteSummary;
       });
     }

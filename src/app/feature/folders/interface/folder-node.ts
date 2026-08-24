@@ -4,5 +4,4 @@ export interface FolderNode {
   idFolder: string;
   folderName: string;
   children: FolderNode[];
-  notes: NoteSummary[];
 }

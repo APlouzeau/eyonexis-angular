@@ -17,7 +17,7 @@ export class NoteService {
     return result;
   }
 
-  getNotesById(id: string): Observable<NoteSummary[]> {
+  getNotesByFolderId(id: string): Observable<NoteSummary[]> {
     let result = this.http.get<NoteSummary[]>(`${this.apiUrl}/notes/${id}`);
     return result;
   }

@@ -10,10 +10,10 @@
     @for (child of folder.children; track child.idFolder) {
     <li><app-folders [folder]="child" [depth]="depth + 1"></app-folders></li>
     }
-    @for (note of folder.notes; track note.id) {
+    @for (note of notes(); track note.id) {
     <li>
-      <a [routerLink]="['/notes', note.id]" class="block w-full py-2 hover:bg-gray-200 text-gray-600"
-        [style.padding-left.px]="8 + (depth + 1) * 8">
+      <a [routerLink]="['/notes', note.id]" class="flex items-center gap-2 w-full py-2 hover:bg-gray-200 text-gray-600"
+        [style.padding-left.px]="8 + (depth + 1) * 8"><img src="icons/note-icon.jpg" class="w-3 h-3" alt="" />
         {{ note.title }}
       </a>
     </li>

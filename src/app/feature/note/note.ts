@@ -1,5 +1,5 @@
 import { Component, Input, OnChanges } from '@angular/core';
-import { NoteContent } from './interface/note';
+import { NoteContent, NoteSummary } from './interface/note';
 import { NoteService } from './services/note-service';
 
 @Component({
@@ -10,13 +10,14 @@ import { NoteService } from './services/note-service';
 })
 export class Note implements OnChanges {
   @Input() id!: string;
-  note: NoteContent | undefined;
+  notesSummary: NoteSummary | undefined;
+  noteContent: NoteContent | undefined;
 
   constructor(private noteService: NoteService) {}
   ngOnChanges() {
     if (this.id) {
       this.noteService.getNotesById(this.id).subscribe((note) => {
-        this.note = note;
+        this.notesSummary = this.notesSummary;
       });
     }
   }

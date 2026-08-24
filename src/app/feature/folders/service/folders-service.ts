@@ -11,7 +11,6 @@ export class FolderService {
 
   getFolderTree(): Observable<FolderNode[]> {
     let result = this.http.get<FolderNode[]>(this.apiUrl);
-    console.log(result);
     return result;
   }
 }

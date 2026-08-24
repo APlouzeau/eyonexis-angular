@@ -4,7 +4,7 @@
 @import 'tailwindcss/utilities.css' layer(utilities);
 
 @theme {
-  --font-sans: 'Inter', sans-serif;
+  --font-sans: 'Inter', system-ui, sans-serif;
 }
 
 @layer base {

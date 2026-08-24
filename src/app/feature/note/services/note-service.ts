@@ -11,14 +11,15 @@ export class NoteService {
   private http = inject(HttpClient);
   private apiUrl = `${environment.apiUrl}`; // à remplacer
 
-  getNotes(): Observable<NoteContent[]> {
-    let result = this.http.get<NoteContent[]>(this.apiUrl);
+  getNote(idFolder: string): Observable<NoteContent> {
+    let result = this.http.get<NoteContent>(`${this.apiUrl}/note/${idFolder}`);
     console.log(result);
     return result;
   }
 
-  getNotesByFolderId(id: string): Observable<NoteSummary[]> {
-    let result = this.http.get<NoteSummary[]>(`${this.apiUrl}/notes/${id}`);
+  getNotesByFolderId(idFolder: string): Observable<NoteSummary[]> {
+    let result = this.http.get<NoteSummary[]>(`${this.apiUrl}/notes/${idFolder}`);
+    console.log(result);
     return result;
   }
 }

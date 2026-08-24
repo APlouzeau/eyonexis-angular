@@ -1,7 +1,7 @@
 <ul>
   @for (item of sidebarItems; track item.id) {
-  <li class="block w-full cursor-pointer hover:bg-gray-200 px-4 py-2 text-gray-600"><a
-      [routerLink]="item.link">{{item.name}}</a></li>
+  <li class="flex items-center gap-2 text-xs w-full cursor-pointer hover:bg-gray-200 px-2 py-2 text-gray-600"><img
+      src="icons/dashboard-icon.png" class="w-4 h-4" alt="" /><a [routerLink]="item.link">{{item.name}}</a></li>
   }
 </ul>
 <ul>

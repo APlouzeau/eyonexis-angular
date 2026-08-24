@@ -1,6 +1,6 @@
-@if (noteContent) {
-<h1>{{ noteContent.title }}</h1>
-<p>{{ noteContent.content }}</p>
+@if (noteContent()) {
+<app-note-header [note]="noteContent()"></app-note-header>
+<p>{{ noteContent()?.folderId }}</p>
 } @else {
 <p>Note not found.</p>
 }

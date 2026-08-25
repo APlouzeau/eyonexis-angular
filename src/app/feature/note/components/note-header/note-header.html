@@ -1,5 +1,7 @@
 @if (note(); as n ){
-<h1 class="text-3xl font-bold mb-2">{{ n.title }}</h1>
-<p class="text-gray-500 mb-2">{{ n.subtitle }}</p>
-<p class="text-xs text-gray-500">{{ n.updated_at}}</p>
+<div>
+  <h1 class="text-3xl font-bold mb-3">{{ n.title }}</h1>
+  <p class="text-gray-500 mb-3 font-sans">{{ n.subtitle }}</p>
+  <p class="text-xs text-gray-500 font-sans">Mis à jour le {{ n.updated_at | date:'d MMMM y'}}</p>
+</div>
 }

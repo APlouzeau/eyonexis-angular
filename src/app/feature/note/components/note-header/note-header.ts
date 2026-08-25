@@ -1,10 +1,10 @@
-import { JsonPipe } from '@angular/common';
+import { DatePipe } from '@angular/common';
 import { Component, input } from '@angular/core';
 import { NoteContent } from '../../interface/note';
 
 @Component({
   selector: 'app-note-header',
-  imports: [JsonPipe],
+  imports: [DatePipe],
   templateUrl: './note-header.html',
   styleUrl: './note-header.css',
 })

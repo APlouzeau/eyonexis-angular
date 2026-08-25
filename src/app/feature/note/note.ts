@@ -2,11 +2,11 @@ import { Component, Input, OnChanges, signal } from '@angular/core';
 import { NoteContent, NoteSummary } from './interface/note';
 import { NoteService } from './services/note-service';
 import { NoteHeader } from './components/note-header/note-header';
-import { JsonPipe } from '@angular/common';
+import { NoteHeading } from './components/note-heading/note-heading';
 
 @Component({
   selector: 'app-note',
-  imports: [NoteHeader, JsonPipe],
+  imports: [NoteHeader, NoteHeading],
   templateUrl: './note.html',
   styleUrls: ['./note.css'],
 })

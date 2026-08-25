@@ -15,21 +15,21 @@ export interface NoteSummary {
 }
 
 export interface TitleBlock {
-  type: 'heading';
+  block_type: 'Heading';
   content: string;
 }
 
 export interface TextBlock {
-  type: 'text';
+  block_type: 'text';
   content: string;
 }
 export interface CodeBlock {
-  type: 'code';
+  block_type: 'code';
   language: string;
   content: string;
 }
 export interface TipBlock {
-  type: 'tip';
+  block_type: 'tip';
   title: string;
   content: string;
   level: TipVariant;

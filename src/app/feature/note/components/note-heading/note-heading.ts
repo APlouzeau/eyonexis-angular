@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
+import { TitleBlock } from '../../interface/note';
 
 @Component({
   selector: 'app-note-heading',
@@ -6,4 +7,6 @@ import { Component } from '@angular/core';
   templateUrl: './note-heading.html',
   styleUrl: './note-heading.css',
 })
-export class NoteHeading {}
+export class NoteHeading {
+  block = input<TitleBlock>();
+}

@@ -1,1 +1,6 @@
-<p>note-code works!</p>
+@if (block(); as code) {
+<div class="mt-5">
+  <pre
+    [class]="'language-' + block().metadata.language"><code [class]="'language-' + block().metadata.language" [innerHTML]="html()"></code></pre>
+</div>
+}

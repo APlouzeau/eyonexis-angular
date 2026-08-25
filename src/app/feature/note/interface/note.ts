@@ -20,21 +20,29 @@ export interface TitleBlock {
 }
 
 export interface TextBlock {
-  block_type: 'text';
+  block_type: 'Text';
   content: string;
 }
 export interface CodeBlock {
-  block_type: 'code';
-  language: string;
+  block_type: 'Code';
+  metadata: CodeMetadata;
   content: string;
 }
 export interface TipBlock {
-  block_type: 'tip';
+  block_type: 'Tip';
   title: string;
   content: string;
   level: TipVariant;
 }
 
+export interface ListBlock {
+  block_type: 'List';
+  content: string;
+}
+
+interface CodeMetadata {
+  language: string;
+}
 type TipVariant = 'warning' | 'memo' | 'tips';
 
-export type NoteBlock = TitleBlock | TextBlock | CodeBlock | TipBlock;
+export type NoteBlock = TitleBlock | TextBlock | CodeBlock | TipBlock | ListBlock;

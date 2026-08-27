@@ -17,6 +17,7 @@
     "@angular/forms": "^21.2.0",
     "@angular/platform-browser": "^21.2.0",
     "@angular/router": "^21.2.0",
+    "easymde": "^2.21.0",
     "ng-prismjs": "^0.0.8",
     "prismjs": "^1.30.0",
     "rxjs": "~7.8.0",

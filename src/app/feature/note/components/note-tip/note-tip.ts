@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
+import { NoteBlock } from '../../interface/note';
 
 @Component({
   selector: 'app-note-tip',
@@ -6,4 +7,6 @@ import { Component } from '@angular/core';
   templateUrl: './note-tip.html',
   styleUrl: './note-tip.css',
 })
-export class NoteTip {}
+export class NoteTip {
+  block = input<NoteBlock>();
+}

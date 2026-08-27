@@ -5,11 +5,11 @@ import { NoteHeader } from './components/note-header/note-header';
 import { NoteHeading } from './components/note-heading/note-heading';
 import { NoteText } from './components/note-text/note-text';
 import { NoteCode } from './components/note-code/note-code';
-import { NoteList } from './components/note-list/note-list';
+import { NoteTip } from './components/note-tip/note-tip';
 
 @Component({
   selector: 'app-note',
-  imports: [NoteHeader, NoteHeading, NoteText, NoteCode, NoteList],
+  imports: [NoteHeader, NoteHeading, NoteText, NoteCode, NoteTip],
   templateUrl: './note.html',
   styleUrls: ['./note.css'],
 })

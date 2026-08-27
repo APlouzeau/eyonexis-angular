@@ -35,14 +35,9 @@ export interface TipBlock {
   level: TipVariant;
 }
 
-export interface ListBlock {
-  block_type: 'List';
-  content: string;
-}
-
 interface CodeMetadata {
   language: string;
 }
 type TipVariant = 'warning' | 'memo' | 'tips';
 
-export type NoteBlock = TitleBlock | TextBlock | CodeBlock | TipBlock | ListBlock;
+export type NoteBlock = TitleBlock | TextBlock | CodeBlock | TipBlock;

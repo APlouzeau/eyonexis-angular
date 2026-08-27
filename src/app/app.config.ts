@@ -4,6 +4,7 @@ import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
 import { routes } from './app.routes';
 import { provideHttpClient, withXhr } from '@angular/common/http';
+import { provideMarkdown } from 'ngx-markdown';
 
 registerLocaleData(localeFr, 'fr');
 

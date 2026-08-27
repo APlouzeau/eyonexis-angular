@@ -1,9 +1,10 @@
 import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 import { TextBlock } from '../../interface/note';
+import { MarkdownComponent } from 'ngx-markdown';
 
 @Component({
   selector: 'app-note-text',
-  imports: [],
+  imports: [MarkdownComponent],
   templateUrl: './note-text.html',
   changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './note-text.css',

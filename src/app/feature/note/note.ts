@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, signal } from '@angular/core';
+import { Component, Input, OnChanges, signal, ChangeDetectionStrategy } from '@angular/core';
 import { NoteContent, NoteSummary } from './interface/note';
 import { NoteService } from './services/note-service';
 import { NoteHeader } from './components/note-header/note-header';
@@ -11,6 +11,7 @@ import { NoteTip } from './components/note-tip/note-tip';
   selector: 'app-note',
   imports: [NoteHeader, NoteHeading, NoteText, NoteCode, NoteTip],
   templateUrl: './note.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./note.css'],
 })
 export class Note implements OnChanges {

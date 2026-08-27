@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import type { SideBarItems } from '../../shared/interface/side-bar-items';
 import type { FolderNode } from '../../feature/folders/interface/folder-node';
 import { RouterLink } from '@angular/router';
@@ -10,6 +10,7 @@ import { Folders } from '../../feature/folders/folders';
   selector: 'app-sidebar',
   imports: [RouterLink, Folders],
   templateUrl: './sidebar.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./sidebar.css'],
 })
 export class Sidebar {

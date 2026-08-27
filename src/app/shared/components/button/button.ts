@@ -1,4 +1,4 @@
-import { Component, computed, input, output } from '@angular/core';
+import { Component, computed, input, output, ChangeDetectionStrategy } from '@angular/core';
 
 type ButtonVariant = 'primary' | 'secondary' | 'danger' | 'caution' | 'theme';
 
@@ -14,6 +14,7 @@ const VARIANT_CLASSES: Record<ButtonVariant, string> = {
   selector: 'app-button',
   imports: [],
   templateUrl: './button.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./button.css'],
 })
 export class Button {

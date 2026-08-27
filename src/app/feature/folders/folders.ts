@@ -1,4 +1,12 @@
-import { Component, DestroyRef, inject, input, Input, signal } from '@angular/core';
+import {
+  Component,
+  DestroyRef,
+  inject,
+  input,
+  Input,
+  signal,
+  ChangeDetectionStrategy,
+} from '@angular/core';
 import { FolderNode } from './interface/folder-node';
 import { RouterLink } from '@angular/router';
 import { takeUntilDestroyed, toSignal } from '@angular/core/rxjs-interop';
@@ -9,6 +17,7 @@ import { NoteSummary } from '../note/interface/note';
   selector: 'app-folders',
   imports: [RouterLink, Folders],
   templateUrl: './folders.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./folders.css'],
 })
 export class Folders {

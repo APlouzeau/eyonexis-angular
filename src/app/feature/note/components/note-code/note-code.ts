@@ -1,4 +1,4 @@
-import { Component, input, computed } from '@angular/core';
+import { Component, input, computed, ChangeDetectionStrategy } from '@angular/core';
 import { CodeBlock } from '../../interface/note';
 import Prism from 'prismjs';
 import 'prismjs/components/prism-rust';
@@ -8,6 +8,7 @@ import 'prismjs/components/prism-typescript';
   selector: 'app-note-code',
   imports: [],
   templateUrl: './note-code.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './note-code.css',
 })
 export class NoteCode {

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { signal } from '@angular/core';
 import { Button } from '../../shared/components/button/button';
 
@@ -6,6 +6,7 @@ import { Button } from '../../shared/components/button/button';
   selector: 'app-header',
   imports: [Button],
   templateUrl: './header.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./header.css'],
 })
 export class Header {

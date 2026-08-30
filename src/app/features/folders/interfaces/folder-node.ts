@@ -1,4 +1,4 @@
-import { NoteSummary } from '../../note/interface/note';
+import { NoteSummary } from '../../notes/interfaces/note';
 
 export interface FolderNode {
   idFolder: string;

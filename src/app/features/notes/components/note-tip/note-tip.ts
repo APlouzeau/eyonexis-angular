@@ -1,5 +1,5 @@
 import { Component, input, ChangeDetectionStrategy } from '@angular/core';
-import { NoteBlock } from '../../interface/note';
+import { NoteBlock } from '../../interfaces/note';
 
 @Component({
   selector: 'app-note-tip',

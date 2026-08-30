@@ -2,7 +2,7 @@ import { ApplicationConfig, LOCALE_ID, provideBrowserGlobalErrorListeners } from
 import { provideRouter, withComponentInputBinding } from '@angular/router';
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
-import { routes } from './app.routes';
+import { routes } from './app-desktop.routes';
 import { provideHttpClient, withXhr } from '@angular/common/http';
 import { provideMarkdown } from 'ngx-markdown';
 

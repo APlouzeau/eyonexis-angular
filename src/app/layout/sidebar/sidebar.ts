@@ -1,10 +1,10 @@
 import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
-import type { SideBarItems } from '../../shared/interface/side-bar-items';
-import type { FolderNode } from '../../feature/folders/interface/folder-node';
+import type { SideBarItems } from '../../shared/interfaces/side-bar-items';
+import type { FolderNode } from '../../features/folders/interfaces/folder-node';
 import { RouterLink } from '@angular/router';
-import { FolderService } from '../../feature/folders/service/folders-service';
+import { FolderService } from '../../features/folders/services/folders.service';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { Folders } from '../../feature/folders/folders';
+import { Folders } from '../../features/folders/folders';
 
 @Component({
   selector: 'app-sidebar',

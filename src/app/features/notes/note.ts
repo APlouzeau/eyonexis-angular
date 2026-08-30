@@ -1,6 +1,6 @@
 import { Component, Input, OnChanges, signal, ChangeDetectionStrategy } from '@angular/core';
-import { NoteContent, NoteSummary } from './interface/note';
-import { NoteService } from './services/note-service';
+import { NoteContent, NoteSummary } from './interfaces/note';
+import { NoteService } from './services/note.service';
 import { NoteHeader } from './components/note-header/note-header';
 import { NoteHeading } from './components/note-heading/note-heading';
 import { NoteText } from './components/note-text/note-text';

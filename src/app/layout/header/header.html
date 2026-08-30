@@ -1,4 +1,6 @@
 <div class="flex items-center justify-between border-b border-solid border-gray-300 p-4">
   <p class="text-lg font-semibold">{{ title() }}</p>
+  @if(canEdit) {
   <app-button label="Nouvelle entrée" variant="theme"></app-button>
+  }
 </div>

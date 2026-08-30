@@ -7,11 +7,11 @@ import {
   signal,
   ChangeDetectionStrategy,
 } from '@angular/core';
-import { FolderNode } from './interface/folder-node';
+import { FolderNode } from './interfaces/folder-node';
 import { RouterLink } from '@angular/router';
 import { takeUntilDestroyed, toSignal } from '@angular/core/rxjs-interop';
-import { NoteService } from '../note/services/note-service';
-import { NoteSummary } from '../note/interface/note';
+import { NoteService } from '../notes/services/note.service';
+import { NoteSummary } from '../notes/interfaces/note';
 
 @Component({
   selector: 'app-folders',

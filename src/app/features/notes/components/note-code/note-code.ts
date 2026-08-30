@@ -1,5 +1,5 @@
 import { Component, input, computed, ChangeDetectionStrategy } from '@angular/core';
-import { CodeBlock } from '../../interface/note';
+import { CodeBlock } from '../../interfaces/note';
 import Prism from 'prismjs';
 import 'prismjs/components/prism-rust';
 import 'prismjs/components/prism-typescript';

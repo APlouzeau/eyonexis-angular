@@ -1,4 +1,5 @@
 import { Component, computed, input, output, ChangeDetectionStrategy } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 type ButtonVariant = 'primary' | 'secondary' | 'danger' | 'caution' | 'theme';
 
@@ -12,7 +13,7 @@ const VARIANT_CLASSES: Record<ButtonVariant, string> = {
 
 @Component({
   selector: 'app-button',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './button.html',
   changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./button.css'],
@@ -21,6 +22,7 @@ export class Button {
   label = input.required<string>();
   variant = input<ButtonVariant>('primary');
   clicked = output<void>();
+  routerLink = input<string | any[] | undefined>(undefined);
 
   classes = computed(
     () => `px-4 py-2 rounded-lg font-medium transition ${VARIANT_CLASSES[this.variant()]}`,

@@ -1,5 +1,5 @@
 import { Component, input, ChangeDetectionStrategy } from '@angular/core';
-import { TextBlock } from '../../interfaces/note';
+import { TextBlock } from '../../../interfaces/note';
 import { MarkdownComponent } from 'ngx-markdown';
 
 @Component({

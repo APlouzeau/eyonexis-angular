@@ -7,10 +7,10 @@ import { environment } from '../../../../environments/environment';
 @Injectable({ providedIn: 'root' })
 export class FolderService {
   private http = inject(HttpClient);
-  private apiUrl = `${environment.apiUrl}/folder-tree`; // à remplacer
+  private folderTreeUrl = `${environment.apiUrl}/folder-tree`;
 
   getFolderTree(): Observable<FolderNode[]> {
-    let result = this.http.get<FolderNode[]>(this.apiUrl);
+    let result = this.http.get<FolderNode[]>(this.folderTreeUrl);
     return result;
   }
 }

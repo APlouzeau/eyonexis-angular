@@ -68,6 +68,25 @@
                   "with": "src/environments/environment.development.ts"
                 }
               ]
+            },
+            "web-dev": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/app/app-desktop.routes.ts",
+                  "with": "src/app/app-web.routes.ts"
+                },
+                {
+                  "replace": "src/environments/capabilities.ts",
+                  "with": "src/environments/capabilities-web.ts"
+                },
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.development.ts"
+                }
+              ]
             }
           },
           "defaultConfiguration": "web"
@@ -82,7 +101,7 @@
               "buildTarget": "eyonexis-angular:build:development"
             },
             "web-dev": {
-              "buildTarget": "eyonexis-angular:build:web,development"
+              "buildTarget": "eyonexis-angular:build:web-dev"
             }
           },
           "defaultConfiguration": "development"

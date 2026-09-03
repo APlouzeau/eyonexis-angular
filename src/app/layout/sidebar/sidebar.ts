@@ -4,7 +4,7 @@ import type { FolderNode } from '../../features/folders/interfaces/folder-node';
 import { RouterLink } from '@angular/router';
 import { FolderService } from '../../features/folders/services/folders.service';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { Folders } from '../../features/folders/folders';
+import { Folders } from '../../features/folders/read/folders';
 
 @Component({
   selector: 'app-sidebar',

@@ -13,5 +13,14 @@ import { EditPermissionService } from '../../services/edit-permission.service';
 export class Header {
   private permissions = inject(EditPermissionService);
   canEdit = this.permissions.canEdit;
+  source = this.permissions.source;
   protected readonly title = signal('Eyonexis');
+
+  constructor(private editPermissionService: EditPermissionService) {
+    console.log('Service canEdit:', this.editPermissionService.canEdit);
+    this.canEdit = this.editPermissionService.canEdit;
+    this.source = this.editPermissionService.source;
+    console.log('Component canEdit:', this.canEdit);
+    console.log('Component source:', this.source);
+  }
 }

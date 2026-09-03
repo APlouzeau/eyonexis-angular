@@ -1,5 +1,5 @@
 import { Component, input, ChangeDetectionStrategy } from '@angular/core';
-import { TitleBlock } from '../../interfaces/note';
+import { TitleBlock } from '../../../interfaces/note';
 
 @Component({
   selector: 'app-note-heading',

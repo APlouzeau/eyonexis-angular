@@ -1,11 +1,11 @@
 import { Component, Input, OnChanges, signal, ChangeDetectionStrategy } from '@angular/core';
 import { NoteContent, NoteSummary } from './interfaces/note';
 import { NoteService } from './services/note.service';
-import { NoteHeader } from './components/note-header/note-header';
-import { NoteHeading } from './components/note-heading/note-heading';
-import { NoteText } from './components/note-text/note-text';
-import { NoteCode } from './components/note-code/note-code';
-import { NoteTip } from './components/note-tip/note-tip';
+import { NoteHeader } from './read/components/note-header/note-header';
+import { NoteHeading } from './read/components/note-heading/note-heading';
+import { NoteText } from './read/components/note-text/note-text';
+import { NoteCode } from './read/components/note-code/note-code';
+import { NoteTip } from './read/components/note-tip/note-tip';
 
 @Component({
   selector: 'app-note',

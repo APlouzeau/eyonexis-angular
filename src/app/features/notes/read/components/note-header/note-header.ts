@@ -1,6 +1,6 @@
 import { DatePipe } from '@angular/common';
 import { Component, input, ChangeDetectionStrategy } from '@angular/core';
-import { NoteContent } from '../../interfaces/note';
+import { NoteContent } from '../../../interfaces/note';
 
 @Component({
   selector: 'app-note-header',

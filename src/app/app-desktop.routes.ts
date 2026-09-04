@@ -3,13 +3,13 @@ import { Dashboard } from './features/dashboard/dashboard';
 import { About } from './features/about/about';
 import { Note } from './features/notes/note';
 import { NewEntry } from './features/new-entry/new-entry';
-import { NewFolder } from './features/folders/write/new-folder/new-folder';
 import { NewNote } from './features/notes/write/new-note/new-note';
+import { FolderCreation } from './features/folders/write/folder-creation';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   { path: 'nouvelle-entrée', component: NewEntry },
-  { path: 'nouveau-dossier', component: NewFolder },
+  { path: 'nouveau-dossier', component: FolderCreation },
   { path: 'nouvelle-note', component: NewNote },
   { path: 'dashboard', component: Dashboard },
   { path: 'about', component: About },

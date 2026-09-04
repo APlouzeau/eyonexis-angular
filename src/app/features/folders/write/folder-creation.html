@@ -1,0 +1,8 @@
+<form class="flex gap-2 my-5">
+  <input type="text" placeholder="Nom du dossier" class="p-2 border rounded-md" />
+  <app-button label="Créer" variant="theme">Créer</app-button>
+</form>
+@for (root of folders(); track root.idFolder) {
+<app-folder-list [folder]="root" [depth]="0" [selectParent]="selectParent.bind(this)"
+  [isSelected]="root.idFolder === selectedParent()?.idFolder" [selectedParentId]="selectedParent()?.idFolder ?? null" />
+}

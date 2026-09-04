@@ -1,1 +1,19 @@
-<p>folder-list works!</p>
+<div [style.marginLeft.px]="depth * 16">
+  <div class="pt-2">
+    <button (click)="toggle()">
+      {{ expanded() ? '▼' : '▶' }}
+      <span (click)="selectParent?.(folder)"
+        class="p-1 hover:bg-sky-600 hover:text-white hover:rounded-lg cursor-pointer" [class.bg-sky-700]="isSelected"
+        [class.text-white]="isSelected" [class.rounded-lg]="isSelected">
+        {{ folder.folderName }}
+      </span>
+    </button>
+  </div>
+
+  @if (expanded() && folder.children?.length) {
+  @for (child of folder.children; track child.idFolder) {
+  <app-folder-list [folder]="child" [depth]="depth + 1" [selectParent]="selectParent"
+    [selectedParentId]="selectedParentId" [isSelected]="child.idFolder === selectedParentId" />
+  }
+  }
+</div>

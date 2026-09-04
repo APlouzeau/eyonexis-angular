@@ -2,7 +2,7 @@ import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import type { SideBarItems } from '../../shared/interfaces/side-bar-items';
 import type { FolderNode } from '../../features/folders/interfaces/folder-node';
 import { RouterLink } from '@angular/router';
-import { FolderService } from '../../features/folders/services/folders.service';
+import { FolderService } from '../../features/folders/read/services/folders.service';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { Folders } from '../../features/folders/read/folders';
 

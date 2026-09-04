@@ -7,4 +7,5 @@ import { capabilities } from '../../environments/capabilities';
 export class EditPermissionService {
   public canEdit = capabilities.canEdit;
   public source = capabilities.source;
+  public bearer = capabilities.bearer;
 }

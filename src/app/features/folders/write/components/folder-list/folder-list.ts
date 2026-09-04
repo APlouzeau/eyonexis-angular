@@ -1,6 +1,6 @@
 import { Component, inject, Input, signal } from '@angular/core';
 import { FolderNode } from '../../../interfaces/folder-node';
-import { FolderService } from '../../../read/services/folders.service';
+import { FolderReadService } from '../../../read/services/folders.service';
 
 @Component({
   imports: [],

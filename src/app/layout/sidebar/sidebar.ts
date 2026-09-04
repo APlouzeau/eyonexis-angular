@@ -2,7 +2,7 @@ import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import type { SideBarItems } from '../../shared/interfaces/side-bar-items';
 import type { FolderNode } from '../../features/folders/interfaces/folder-node';
 import { RouterLink } from '@angular/router';
-import { FolderService } from '../../features/folders/read/services/folders.service';
+import { FolderReadService } from '../../features/folders/read/services/folders.service';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { Folders } from '../../features/folders/read/folders';
 
@@ -14,7 +14,7 @@ import { Folders } from '../../features/folders/read/folders';
   styleUrls: ['./sidebar.css'],
 })
 export class Sidebar {
-  private folderService = inject(FolderService);
-  folderNodes = toSignal(this.folderService.getFolderTree(), { initialValue: [] });
+  private folderReadService = inject(FolderReadService);
+  folderNodes = toSignal(this.folderReadService.getFolderTree(), { initialValue: [] });
   sidebarItems: SideBarItems[] = [{ id: 1, name: 'Dashboard', link: '/' }];
 }

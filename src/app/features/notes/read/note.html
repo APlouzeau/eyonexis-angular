@@ -1,0 +1,19 @@
+@if (noteContent(); as n) {
+<div class="w-full">
+  <app-note-header [note]="n"></app-note-header>
+  <hr class="w-5/6 m-auto mt-10 hr-color-gray">
+  <div class="w-2/3 mx-auto">
+    @for (block of n.blocks; track block) {
+    @switch (block.block_type) {
+    @case ('Heading') { <app-note-heading [block]="block" /> }
+    @case ('Text') { <app-note-text [block]="block" /> }
+    @case ('Code') { <app-note-code [block]="block" /> }
+    @case ('Tip') { <app-note-tip [block]="block" /> }
+    }
+    }
+  </div>
+</div>
+}
+@else {
+<p>Note not found.</p>
+}

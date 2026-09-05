@@ -1,7 +1,17 @@
 @if (note(); as n ){
-<div>
-  <h1 class="text-3xl font-bold mb-3">{{ n.title }}</h1>
-  <p class="text-gray-500 mb-3 font-sans">{{ n.subtitle }}</p>
-  <p class="text-xs text-gray-500 font-sans">Mis à jour le {{ n.updated_at | date:'d MMMM y'}}</p>
+<div class="w-full">
+  <div class="relative w-full">
+    <div class="mx-auto max-w-lg">
+      <h1 class=" text-3xl font-bold ">
+        {{ n.title }}
+      </h1>
+      <p class=" text-gray-500 mb-3 font-sans">{{ n.subtitle }}</p>
+      <p class=" text-xs text-gray-500 font-sans">Mis à jour le {{ n.updated_at | date:'d MMMM y'}}</p>
+    </div>
+
+    <div class="absolute right-0 top-0">
+      <app-button label="Editer"></app-button>
+    </div>
+  </div>
 </div>
 }

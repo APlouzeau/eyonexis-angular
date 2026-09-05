@@ -17,10 +17,7 @@ export class Header {
   protected readonly title = signal('Eyonexis');
 
   constructor(private editPermissionService: EditPermissionService) {
-    console.log('Service canEdit:', this.editPermissionService.canEdit);
     this.canEdit = this.editPermissionService.canEdit;
     this.source = this.editPermissionService.source;
-    console.log('Component canEdit:', this.canEdit);
-    console.log('Component source:', this.source);
   }
 }

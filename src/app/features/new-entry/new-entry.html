@@ -1,4 +1,9 @@
-<div class="flex items-center justify-between border-b border-solid border-gray-300 gap-8 p-4">
-  <app-button label="Nouveau dossier" variant="primary" [routerLink]="'/nouveau-dossier'"></app-button>
-  <app-button label="Nouvelle note" variant="theme" [routerLink]="'/nouvelle-note'"></app-button>
-</div>
+<form class="flex gap-2 my-5">
+  <input type="text" placeholder="Nom" class="p-2 border rounded-md" [(ngModel)]="newName" name="newName" />
+  <app-button label="Dossier" variant="theme" (click)="createFolder()">Dossier</app-button>
+  <app-button label="Note" variant="primary" (click)="createNote()">Note</app-button>
+</form>
+@for (root of folders(); track root.idFolder) {
+<app-folder-list [folder]=" root" [depth]="0" [selectParent]="selectParent.bind(this)"
+  [isSelected]="root.idFolder === selectedParent()?.idFolder" [selectedParentId]="selectedParent()?.idFolder ?? null" />
+}

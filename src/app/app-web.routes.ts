@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 import { Dashboard } from './features/dashboard/dashboard';
 import { About } from './features/about/about';
-import { Note } from './features/notes/note';
+import { Note } from './features/notes/read/note';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },

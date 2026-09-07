@@ -9,9 +9,11 @@
       <p class=" text-xs text-gray-500 font-sans">Mis à jour le {{ n.updated_at | date:'d MMMM y'}}</p>
     </div>
 
+    @if(canEdit) {
     <div class="absolute right-0 top-0">
-      <app-button label="Editer"></app-button>
+      <app-button label="Editer" [routerLink]="['/edit', n.id]"></app-button>
     </div>
+    }
   </div>
 </div>
 }

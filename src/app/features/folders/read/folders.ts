@@ -24,7 +24,8 @@ export class Folders {
   private noteService = inject(NoteService);
   private destroyRef = inject(DestroyRef);
   @Input() folder!: FolderNode;
-  @Input() depth = 0;
+  depth = input(0)
+  path = input<String[]>(['note'])
   expanded = signal(false);
   notes = signal<NoteSummary[]>([]);
   loading = signal(false);
@@ -32,6 +33,7 @@ export class Folders {
   toggle() {
     const willExpand = !this.expanded();
     this.expanded.set(willExpand);
+    console.log(this.folder)
 
     if (willExpand && this.notes().length === 0) {
       this.loading.set(true);

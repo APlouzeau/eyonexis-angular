@@ -12,6 +12,7 @@ export interface NoteContent {
 export interface NoteSummary {
   id: string;
   title: string;
+  slug: string;
 }
 
 export interface TitleBlock {

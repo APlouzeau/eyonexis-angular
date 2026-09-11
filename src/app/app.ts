@@ -9,7 +9,7 @@ import { Searchbar } from './layout/searchbar/searchbar';
   selector: 'app-root',
   imports: [RouterOutlet, Header, Sidebar, Footer, Searchbar],
   templateUrl: './app.html',
-  changeDetection: ChangeDetectionStrategy.Eager,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ['./app.css'],
 })
 export class App {

@@ -1,8 +1,7 @@
 import { Component, input } from '@angular/core';
-import { Button } from '../../../../../shared/components/button/button';
 
 @Component({
-  imports: [Button],
+  imports: [],
   selector: 'app-edit-input',
   styleUrls: ['./edit-input.css'],
   templateUrl: './edit-input.html',

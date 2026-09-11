@@ -11,6 +11,6 @@ export const routes: Routes = [
   { path: 'edit/:id', component: EditNote },
   { path: 'dashboard', component: Dashboard },
   { path: 'about', component: About },
-  { path: 'note/:id', component: Note },
+  { path: 'note/**', component: Note },
   { path: '**', redirectTo: 'dashboard' },
 ];

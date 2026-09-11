@@ -11,9 +11,9 @@ export class NoteService {
   private http = inject(HttpClient);
   private apiUrl = `${environment.apiUrl}`; // à remplacer
 
-  getNote(idFolder: string): Observable<NoteContent> {
-    let result = this.http.get<NoteContent>(`${this.apiUrl}/notes/get-note/${idFolder}`);
-    console.log(result);
+  getNote(urlSlug: string): Observable<NoteContent> {
+    console.log(urlSlug);
+    let result = this.http.get<NoteContent>(`${this.apiUrl}/notes/show/${urlSlug}`);
     return result;
   }
 

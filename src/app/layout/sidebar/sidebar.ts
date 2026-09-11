@@ -3,7 +3,6 @@ import { FoldersStoreService } from '../../shared/services/store/folders-store/f
 import type { SideBarItems } from '../../shared/interfaces/side-bar-items';
 import { RouterLink } from '@angular/router';
 import { FolderReadService } from '../../features/folders/read/services/folders.service';
-import { toSignal } from '@angular/core/rxjs-interop';
 import { Folders } from '../../features/folders/read/folders';
 
 @Component({

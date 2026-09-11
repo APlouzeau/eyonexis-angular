@@ -13,12 +13,11 @@ import { NoteHeading } from './components/note-heading/note-heading';
 import { NoteText } from './components/note-text/note-text';
 import { NoteCode } from './components/note-code/note-code';
 import { NoteTip } from './components/note-tip/note-tip';
-import { EditPermissionService } from '../../../services/edit-permission.service';
-import { Button } from '../../../shared/components/button/button';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-note',
-  imports: [NoteHeader, NoteHeading, NoteText, NoteCode, NoteTip, Button],
+  imports: [NoteHeader, NoteHeading, NoteText, NoteCode, NoteTip],
   templateUrl: './note.html',
   changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./note.css'],
@@ -27,22 +26,26 @@ import { Button } from '../../../shared/components/button/button';
   },
 })
 export class Note implements OnChanges {
-  @Input() id!: string;
+  private noteService = inject(NoteService)
+  private activateRoute = inject(ActivatedRoute)
+  @Input() slug!: string;
   notesSummary = signal<NoteSummary[]>([]);
   noteContent = signal<NoteContent | undefined>(undefined);
+  url = this.activateRoute.snapshot.url.join('/')
 
-  constructor(private noteService: NoteService) {}
   ngOnChanges() {
-    if (this.id) {
-      this.noteService.getNotesByFolderId(this.id).subscribe((noteSummary) => {
+    if (this.slug) {
+      this.noteService.getNotesByFolderId(this.slug).subscribe((noteSummary) => {
         this.notesSummary.set(noteSummary);
       });
     }
-    if (this.id) {
-      this.noteService.getNote(this.id).subscribe((noteContent) => {
+    if (this.url) {
+      console.log("coucou")
+      this.noteService.getNote(this.url).subscribe((noteContent) => {
         this.noteContent.set(noteContent);
         console.log(this.noteContent);
       });
     }
   }
 }
+

@@ -12,4 +12,5 @@ export class EditInput {
   name = input.required<string>();
   id = input.required<string>();
   type = input.required<string>();
+  value = input<string>('');
 }

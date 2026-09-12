@@ -10,7 +10,7 @@ import {
 import { FolderNode } from '../interfaces/folder-node';
 import { RouterLink } from '@angular/router';
 import { takeUntilDestroyed, toSignal } from '@angular/core/rxjs-interop';
-import { NoteService } from '../../notes/services/note.service';
+import { NoteReadService } from '../../notes/services/note.read.service';
 import { NoteSummary } from '../../notes/interfaces/note';
 
 @Component({
@@ -21,11 +21,11 @@ import { NoteSummary } from '../../notes/interfaces/note';
   styleUrls: ['./folders.css'],
 })
 export class Folders {
-  private noteService = inject(NoteService);
+  private noteReadService = inject(NoteReadService);
   private destroyRef = inject(DestroyRef);
   @Input() folder!: FolderNode;
-  depth = input(0)
-  path = input<String[]>(['note'])
+  depth = input(0);
+  path = input<String[]>(['note']);
   expanded = signal(false);
   notes = signal<NoteSummary[]>([]);
   loading = signal(false);
@@ -33,11 +33,11 @@ export class Folders {
   toggle() {
     const willExpand = !this.expanded();
     this.expanded.set(willExpand);
-    console.log(this.folder)
+    console.log(this.folder);
 
     if (willExpand && this.notes().length === 0) {
       this.loading.set(true);
-      this.noteService
+      this.noteReadService
         .getNotesByFolderId(this.folder.idFolder)
         .pipe(takeUntilDestroyed(this.destroyRef))
         .subscribe({

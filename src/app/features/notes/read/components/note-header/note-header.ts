@@ -3,6 +3,7 @@ import { Component, input, ChangeDetectionStrategy, inject } from '@angular/core
 import { Button } from '../../../../../shared/components/button/button';
 import { NoteContent } from '../../../interfaces/note';
 import { EditPermissionService } from '../../../../../services/edit-permission.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-note-header',
@@ -14,5 +15,9 @@ import { EditPermissionService } from '../../../../../services/edit-permission.s
 export class NoteHeader {
   private permissions = inject(EditPermissionService);
   canEdit = this.permissions.canEdit;
+
   note = input<NoteContent>();
+
+  private route = inject(ActivatedRoute);
+  path = this.route.snapshot.url.join('/');
 }

@@ -1,13 +1,14 @@
 import {
   Component,
-  Input,
-  OnChanges,
   signal,
   ChangeDetectionStrategy,
   inject,
+  OnInit,
+  OnDestroy,
+  input,
 } from '@angular/core';
 import { NoteContent, NoteSummary } from '../interfaces/note';
-import { NoteService } from '../services/note.service';
+import { NoteReadService } from '../services/note.read.service';
 import { NoteHeader } from './components/note-header/note-header';
 import { NoteHeading } from './components/note-heading/note-heading';
 import { NoteText } from './components/note-text/note-text';
@@ -25,27 +26,28 @@ import { ActivatedRoute } from '@angular/router';
     class: 'block w-full',
   },
 })
-export class Note implements OnChanges {
-  private noteService = inject(NoteService)
-  private activateRoute = inject(ActivatedRoute)
-  @Input() slug!: string;
-  notesSummary = signal<NoteSummary[]>([]);
-  noteContent = signal<NoteContent | undefined>(undefined);
-  url = this.activateRoute.snapshot.url.join('/')
+export class Note implements OnInit, OnDestroy {
+  private noteReadService = inject(NoteReadService);
+  private route = inject(ActivatedRoute);
 
-  ngOnChanges() {
-    if (this.slug) {
-      this.noteService.getNotesByFolderId(this.slug).subscribe((noteSummary) => {
-        this.notesSummary.set(noteSummary);
-      });
-    }
-    if (this.url) {
-      console.log("coucou")
-      this.noteService.getNote(this.url).subscribe((noteContent) => {
+  noteContent = signal<NoteContent | undefined>(undefined);
+
+  private urlSub: any;
+
+  ngOnInit() {
+    this.urlSub = this.route.url.subscribe((segments) => {
+      const urlPath = segments.map((s) => s.path).join('/');
+      console.log('URL détectée :', urlPath);
+
+      this.noteReadService.getNote(urlPath).subscribe((noteContent) => {
         this.noteContent.set(noteContent);
-        console.log(this.noteContent);
       });
+    });
+  }
+
+  ngOnDestroy() {
+    if (this.urlSub) {
+      this.urlSub.unsubscribe();
     }
   }
 }
-

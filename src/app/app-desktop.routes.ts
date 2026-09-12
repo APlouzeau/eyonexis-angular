@@ -8,7 +8,7 @@ import { EditNote } from './features/notes/write/edit-note';
 export const routes: Routes = [
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   { path: 'nouvelle-entrée', component: NewEntry },
-  { path: 'edit/:id', component: EditNote },
+  { path: 'edit/**', component: EditNote },
   { path: 'dashboard', component: Dashboard },
   { path: 'about', component: About },
   { path: 'note/**', component: Note },

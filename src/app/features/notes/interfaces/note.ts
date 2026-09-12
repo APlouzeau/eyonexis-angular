@@ -1,5 +1,5 @@
 export interface NoteContent {
-  id: string;
+  id_note: string;
   title: string;
   subtitle: string;
   folderId: string | null;

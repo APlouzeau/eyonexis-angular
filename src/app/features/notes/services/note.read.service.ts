@@ -7,7 +7,7 @@ import { environment } from '../../../../environments/environment';
 @Injectable({
   providedIn: 'root',
 })
-export class NoteService {
+export class NoteReadService {
   private http = inject(HttpClient);
   private apiUrl = `${environment.apiUrl}`; // à remplacer
 

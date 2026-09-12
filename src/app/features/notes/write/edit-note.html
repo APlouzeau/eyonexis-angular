@@ -1,6 +1,13 @@
 <div>
     <app-add-bloc></app-add-bloc>
-    <app-edit-note-header class="mx-auto" [note]="noteContent()"></app-edit-note-header>
-    <hr class="w-5/6 m-auto mt-10 hr-color-gray">
-    <app-edit-text-bloc></app-edit-text-bloc>
+    @if (noteContent(); as n) {
+    <app-edit-note-header class="mx-auto" [note]="n"></app-edit-note-header>
+    <hr class="w-3/5 m-auto mt-10 hr-color-gray">
+    @for (block of n.blocks; track block) {
+    @switch (block.block_type) {
+    @case ('Text') {<app-edit-text-bloc [block]="block"></app-edit-text-bloc>}
+    @case ('Code') {<app-edit-code-bloc [block]="block"></app-edit-code-bloc>}
+    }
+    }
+    }
 </div>

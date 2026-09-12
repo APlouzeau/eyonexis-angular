@@ -1,1 +1,5 @@
-<app-edit-input-text for="content" label="Content" name="name" id="id" type="text"></app-edit-input-text>
+{{block | json}}
+@if (block(); as b ) {
+<app-edit-input-textarea for="content" label="Texte" name="name" id="id" type="text"
+    value="{{b.content}}"></app-edit-input-textarea>
+}

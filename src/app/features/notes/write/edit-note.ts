@@ -5,9 +5,11 @@ import { NoteContent } from '../interfaces/note';
 import { NoteReadService } from '../services/note.read.service';
 import { ActivatedRoute } from '@angular/router';
 import { AddBloc } from './components/add-bloc/add-bloc/add-bloc';
+import { JsonPipe } from '@angular/common';
+import { EditCodeBloc } from './components/edit-code-bloc/edit-code-bloc';
 
 @Component({
-  imports: [EditNoteHeader, EditTextBloc, AddBloc],
+  imports: [EditNoteHeader, EditTextBloc, AddBloc, EditCodeBloc, JsonPipe],
   selector: 'app-edit-note',
   styleUrls: ['./edit-note.css'],
   templateUrl: './edit-note.html',

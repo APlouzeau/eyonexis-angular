@@ -1,7 +1,7 @@
 import { Component, computed, input, output, ChangeDetectionStrategy } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
-type ButtonVariant = 'primary' | 'secondary' | 'danger' | 'caution' | 'theme';
+type ButtonVariant = 'primary' | 'secondary' | 'danger' | 'caution' | 'theme' | 'good';
 
 const VARIANT_CLASSES: Record<ButtonVariant, string> = {
   primary: 'bg-sky-600 hover:bg-sky-700 text-white',
@@ -9,6 +9,7 @@ const VARIANT_CLASSES: Record<ButtonVariant, string> = {
   danger: 'bg-red-600 hover:bg-red-700 text-white',
   caution: 'bg-yellow-500 hover:bg-yellow-600 text-black',
   theme: 'bg-rose-500 hover:bg-red-700 text-white',
+  good: 'bg-green-500 hover:bg-green-700 text-white',
 };
 
 @Component({
@@ -25,6 +26,6 @@ export class Button {
   routerLink = input<string | any[] | undefined>(undefined);
 
   classes = computed(
-    () => `px-4 py-2 rounded-lg font-medium transition ${VARIANT_CLASSES[this.variant()]}`,
+    () => `px-4 py-2 rounded-lg font-medium transition w-full ${VARIANT_CLASSES[this.variant()]}`,
   );
 }

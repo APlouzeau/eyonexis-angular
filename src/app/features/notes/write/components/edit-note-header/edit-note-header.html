@@ -1,9 +1,9 @@
 <div class="flex flex-col justify-center mt-2">
     <form class="mx-auto">
-        <app-edit-input type="text" for="noteTitle" label="Titre" name="noteTitle" id="noteTitle" value="{{
-            note()?.title}}"></app-edit-input>
-        <app-edit-input type="text" for="noteSubTitle" label="Sous-titre" name="noteSubTitle" id="noteSubTitle"
-            text="Mon texte" value="{{note()?.subtitle}}"></app-edit-input>
+        <app-edit-input-text for="noteTitle" label="Titre" name="noteTitle" id="noteTitle" value="{{
+            note()?.title}}"></app-edit-input-text>
+        <app-edit-input-textarea for="noteSubTitle" label="Sous-titre" name="noteSubTitle" id="noteSubTitle"
+            text="Mon texte" value="{{note()?.subtitle}}"></app-edit-input-textarea>
 
     </form>
 </div>

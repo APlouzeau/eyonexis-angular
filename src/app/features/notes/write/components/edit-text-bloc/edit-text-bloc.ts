@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { EditInput } from '../edit-input/edit-input';
+import { EditInputText } from '../edit-input-text/edit-input-text';
 @Component({
-  imports: [EditInput],
+  imports: [EditInputText],
   selector: 'app-edit-text-bloc',
   styleUrls: ['./edit-text-bloc.css'],
   templateUrl: './edit-text-bloc.html',

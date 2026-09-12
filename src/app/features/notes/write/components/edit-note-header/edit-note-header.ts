@@ -1,10 +1,10 @@
 import { Component, input } from '@angular/core';
-import { EditInput } from '../edit-input/edit-input';
+import { EditInputText } from '../edit-input-text/edit-input-text';
 import { NoteContent } from '../../../interfaces/note';
-import { JsonPipe } from '@angular/common';
+import { EditInputTextarea } from '../edit-input-textarea/edit-input-textarea';
 
 @Component({
-  imports: [EditInput, JsonPipe],
+  imports: [EditInputText, EditInputTextarea],
   selector: 'app-edit-note-header',
   styleUrls: ['./edit-note-header.css'],
   templateUrl: './edit-note-header.html',

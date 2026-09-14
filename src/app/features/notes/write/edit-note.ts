@@ -7,9 +7,19 @@ import { ActivatedRoute } from '@angular/router';
 import { AddBloc } from './components/add-bloc/add-bloc/add-bloc';
 import { JsonPipe } from '@angular/common';
 import { EditCodeBloc } from './components/edit-code-bloc/edit-code-bloc';
+import { EditTipBloc } from './components/edit-tip-bloc/edit-tip-bloc';
+import { EditTitleBloc } from './components/edit-title-bloc/edit-title-bloc';
 
 @Component({
-  imports: [EditNoteHeader, EditTextBloc, AddBloc, EditCodeBloc, JsonPipe],
+  imports: [
+    EditNoteHeader,
+    EditTextBloc,
+    AddBloc,
+    EditCodeBloc,
+    EditTipBloc,
+    EditTitleBloc,
+    JsonPipe,
+  ],
   selector: 'app-edit-note',
   styleUrls: ['./edit-note.css'],
   templateUrl: './edit-note.html',

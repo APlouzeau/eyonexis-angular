@@ -5,8 +5,10 @@
     <hr class="w-3/5 m-auto mt-10 hr-color-gray">
     @for (block of n.blocks; track block) {
     @switch (block.block_type) {
+    @case ('Heading') {<app-edit-title-bloc [block]="block"></app-edit-title-bloc>}
     @case ('Text') {<app-edit-text-bloc [block]="block"></app-edit-text-bloc>}
     @case ('Code') {<app-edit-code-bloc [block]="block"></app-edit-code-bloc>}
+    @case ('Tip') {<app-edit-tip-bloc [block]="block"></app-edit-tip-bloc>}
     }
     }
     }
